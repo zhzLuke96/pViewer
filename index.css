@@ -62,7 +62,7 @@ footer{
     position: absolute;
     top:0;
     height: 10em;
-    width: 100vw;
+    width: 100%;
 }
 .mac-red{
     background-color: rgb(231,69,69);
