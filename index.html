@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PUI</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://zhzluke96.github.io/Pui/dist/core.min.css">
+    <link rel="stylesheet" href="https://zhzluke96.github.io/Pui/dist/util.min.css">
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body class="pui">
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div class="mask"></div>
+    <header class="t:center">
+        <h1 class="">Component editor</h1>
+    </header>
+    <div class="content container">
+        <div id="app" class="row row-gap">
+        </div>
+    </div>
+    <footer class="t:center">
+        <span>Power by:</span>
+        <ul class="nav">
+            <li>
+                <a href="https://zhzluke96.github.io/Pui/">PUI.SASS</a>
+            </li>
+            <li>
+                <a href="https://zhzluke96.github.io/PoiJs/">POI.JS</a>
+            </li>
+        </ul>
+        <hr>
+        <span>Copyright © 2018-now <a href="https://github.com/zhzLuke96" class="f-c:gray"> zhzLuke96</a></span>
+    </footer>
+    <script type="text/html" id="treeTpl">
+        <div class="col col-sm:10">
+                <div class="cards max-h no-b shadow:sm">
+                    <div class="card bg:gray-lightest">
+                        <h4 class="p:0 m:0">🌳Dom Tree</h4>
+                    </div>
+                    <div class="card">
+                        {{ TreeLi() }}
+                    </div>
+                </div>
+            </div>
+            <div class="col col-sm:10 col-sm:first">
+                <div class="cards no-b max-h shadow:sm">
+                    <div class="card bg:gray-lightest">
+                        <div class="row row-gap row:center">
+                            <div class="col">
+                                <h4 class="p:0 m:0">🚀PreViwer</h4>
+                            </div>
+                            <div class="col">
+                                <span class="pull-right r:10 p:2 m-l:1 mac-green"></span>
+                                <span class="pull-right r:10 p:2 m-l:1 mac-yellow"></span>
+                                <span class="pull-right r:10 p:2 m-l:1 mac-red"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="wapper">
+                            {{ innerHtml }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="code" class="col:10 m-t:5">
+                <div class="cards no-b shadow:sm">
+                    <div class="card bg:gray-lightest">
+                        <div class="row row-gap row:center">
+                            <div class="col">
+                                <h4 class="p:0 m:0">🐛Coder Viwer</h4>
+                            </div>
+                            <div class="col">
+                                <a class="btn btn-black outline pull-right ripple" href="#modal1">
+                                    🍔URI-encode
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card h:5">
+                        <textarea class="textarea-inherit" bind:value="innerHtml" on:keyup="innerHtml=self.value">
+                        </textarea>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal" id="modal1">
+                <div class="body cards no-b m-t:10 m-l:3 m-r:3">
+                    <div class="card container">
+                        <div class="row row:baseline">
+                            <div class="col:9">
+                                <span class="f-w:900 f:5">Use it Visit this page</span>
+                            </div>
+                            <a class="col f-w:900 f:6 hover:f-c:purple" href="#code" title="close">×</a>
+                        </div>
+                    </div>
+                    <div class="card container">
+                        <div class="row row-gap">
+                            <div class="col f:4 p:4 hidden-text">
+                                <a href="{{ window.location.origin + window.location.pathname + "#" + encodeURIComponent(innerHtml) }}">
+                                    {{ window.location.origin + window.location.pathname + "#" + encodeURIComponent(innerHtml) }}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card container m:#">
+                        <div class="row row-gap">
+                            <div class="col">
+                                <a class="btn btn-dark outline ripple pull-right" href="#code">cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </script>
+    <script src="https://zhzluke96.github.io/PoiJs/dist/Poi.bundle.js"></script>
+    <!-- <script src="./Poi.bundle.js"></script> -->
+    <script src="./index.js"></script>
+</body>
+
+</html>
