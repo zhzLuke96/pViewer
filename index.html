@@ -9,11 +9,13 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>PUI</title>
+    <title>Viewer - PUI</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://zhzluke96.github.io/Pui/dist/core.min.css">
     <link rel="stylesheet" href="https://zhzluke96.github.io/Pui/dist/util.min.css">
+    <!-- <link rel="stylesheet" href="./core.min.css"> -->
+    <!-- <link rel="stylesheet" href="./util.min.css"> -->
     <link rel="stylesheet" href="./index.css">
 
 </head>
@@ -43,6 +45,21 @@
         <hr>
         <span>Copyright © 2018-now <a href="https://github.com/zhzLuke96" class="f-c:gray"> zhzLuke96</a></span>
     </footer>
+    <script type="text/x-template" id="nodetpl">
+        {{ if(dom){ }}
+            <li>
+                <div>{{= seletorify(dom) }}
+                {{ if(dom.children.length != 0){ }}
+                    <ul>
+                        {{ for(let e of dom.children){ }}
+                            {{* {dom:e,seletorify:seletorify} }}
+                        {{ } }}
+                    </ul>
+                {{ } }}
+                </div>
+            </li>
+        {{ } }}
+    </script>
     <script type="text/html" id="treeTpl">
         <div class="col col-sm:10">
                 <div class="cards max-h no-b shadow:sm">
@@ -50,7 +67,13 @@
                         <h4 class="p:0 m:0">🌳Dom Tree</h4>
                     </div>
                     <div class="card">
-                        {{ TreeLi() }}
+                        {{ if(selfDom && selfDom.children.length != 0){ }}
+                            <ul>
+                                {{ for(let e of selfDom.children){ }}
+                                    {{$ node({dom:e,seletorify:seletorify}) }}
+                                {{ } }}
+                            </ul>
+                        {{ } }}
                     </div>
                 </div>
             </div>
@@ -69,8 +92,8 @@
                         </div>
                     </div>
                     <div class="card">
-                        <div class="wapper">
-                            {{ innerHtml }}
+                        <div id="preBox" class="wapper">
+                            {{= innerHtml }}
                         </div>
                     </div>
                 </div>
@@ -90,7 +113,7 @@
                         </div>
                     </div>
                     <div class="card h:5">
-                        <textarea id="codeview" class="textarea-inherit" bind:value="innerHtml" on:keyup="innerHtml=self.value">
+                        <textarea id="codeview" class="textarea-inherit" bind:value="innerHtml" on:input="innerHtml=self.value">
                         </textarea>
                     </div>
                 </div>
@@ -110,7 +133,7 @@
                         <div class="row row-gap">
                             <div class="col f:4 p:4 hidden-text">
                                 <a href="{{ window.location.origin + window.location.pathname + "#" + encodeURIComponent(innerHtml) }}">
-                                    {{ window.location.origin + window.location.pathname + "#" + encodeURIComponent(innerHtml) }}
+                                    {{= window.location.origin + window.location.pathname + "#" + encodeURIComponent(innerHtml) }}
                                 </a>
                             </div>
                         </div>

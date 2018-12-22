@@ -62,3 +62,8 @@ typings/
 
 # local poi
 Poi.bundle.js
+Poi.js
+
+# local pui
+core.min.css
+util.min.css
