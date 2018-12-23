@@ -14,7 +14,7 @@ const $ = q => document.querySelector.call(document, q);
             seletorify($ele) {
                 let selector = $ele.localName
                 if ($ele.id) selector += "#" + $ele.id
-                if ($ele.className) selector += "." + $ele.className.split(" ").join(".")
+                if ($ele.className) selector += "." + $ele.className.trim().split(" ").join(".")
                 return selector
             }
         },

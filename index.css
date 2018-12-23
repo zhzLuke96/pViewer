@@ -73,3 +73,6 @@ footer{
 .mac-yellow{
     background-color: rgb(245,176,39);
 }
+#app ul{
+    padding-left: 1rem;
+}
