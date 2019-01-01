@@ -3,7 +3,7 @@ const $ = q => document.querySelector.call(document, q);
     const toArr = o => Array.prototype.slice.call(o)
     const default_html = `<div class="row row-gap"><div class="col"><button type="button" name="button" class=" btn btn-block btn-blue">.primary</button></div><div class="col"><button type="button" name="button" class=" btn btn-block btn-blue ripple">.ripple</button></div><div class="col"><button type="button" name="button" class=" btn btn-block btn-blue ripple-inner">.inner</button></div><div class="col"><button type="button" name="button" class=" btn btn-block btn-blue ripple-outer">.outer</button></div></div>`
 
-    Poi.prototype.mod("node", $("#nodetpl").innerHTML)
+    Poi.mod("node", $("#nodetpl").innerHTML)
     
     window.app = new Poi({
         el: "#app",
