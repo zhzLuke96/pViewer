@@ -67,3 +67,6 @@ Poi.js
 # local pui
 core.min.css
 util.min.css
+
+# new feature
+zdom.js

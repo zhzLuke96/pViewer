@@ -1,24 +1,35 @@
-*{
-    transition: all .3s;
+* {
+    /* transition: all .3s; */
+    transform: translate3d(0,0,0);
 }
-body{
+
+body {
     background-color: hsla(0, 0%, 0%, .1);
 }
+
 .textarea-inherit {
     width: 100%;
     height: 100%;
     overflow: auto;
     word-break: break-all;
+    border: 0;
+    padding: 1rem;
+    resize: none;
+    overflow-y: scroll;
+    outline: none;
 }
-.content{
+
+.content {
     max-width: 960px;
 }
-header{
+
+header {
     background-color: #9966cc;
     color: rgb(238, 238, 238);
     margin-bottom: 1em;
 }
-footer{
+
+footer {
     margin-top: 1em;
     font-size: 12px;
     flex: 0 0 auto;
@@ -27,52 +38,71 @@ footer{
     color: rgb(238, 238, 238);
     padding: 25px;
 }
-.max-h{
+
+.wapper{
+    height: 100%;
+}
+
+.hFill{
+    height: calc(100% - 2rem);
+}
+
+.max-h {
     width: 100%;
     height: 100%;
     display: inline-table;
 }
-.hidden-text{
+
+.hidden-text {
     text-overflow: ellipsis;
     white-space: normal;
     overflow: hidden;
     -webkit-line-clamp: 1;
 }
-.nav{
+
+.nav {
     padding: 0;
     display: inline-flex;
     text-align: center;
     justify-content: center;
 }
-.nav > li{
+
+.nav>li {
     list-style: none;
 }
-.nav a{
+
+.nav a {
     padding-left: 1em;
     padding-right: 1em;
     border-left: 1px solid rgba(0, 0, 0, 0);
     color: white !important;
 }
-.nav a:hover{
+
+.nav a:hover {
     border-left: 1px solid white;
 }
-.mask{
+
+.mask {
     z-index: -1;
     background-color: #9966cc;
     position: absolute;
-    top:0;
+    top: 0;
     height: 10em;
     width: 100%;
 }
-.mac-red{
-    background-color: rgb(231,69,69);
+
+.mac-red {
+    background-color: rgb(231, 69, 69);
 }
-.mac-green{
-    background-color: rgb(84,196,52);
+
+.mac-green {
+    background-color: rgb(84, 196, 52);
 }
-.mac-yellow{
-    background-color: rgb(245,176,39);
+
+.mac-yellow {
+    background-color: rgb(245, 176, 39);
 }
-#app ul{
+
+#app ul {
     padding-left: 1rem;
 }

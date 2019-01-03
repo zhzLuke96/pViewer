@@ -1,9 +1,11 @@
 const $ = q => document.querySelector.call(document, q);
 (function(window){
     const toArr = o => Array.prototype.slice.call(o)
-    const default_html = `<div class="row row-gap"><div class="col"><button type="button" name="button" class=" btn btn-block btn-blue">.primary</button></div><div class="col"><button type="button" name="button" class=" btn btn-block btn-blue ripple">.ripple</button></div><div class="col"><button type="button" name="button" class=" btn btn-block btn-blue ripple-inner">.inner</button></div><div class="col"><button type="button" name="button" class=" btn btn-block btn-blue ripple-outer">.outer</button></div></div>`
+    const default_html = `<div class="row row-gap"><div class="col"><button class=" btn btn-block btn-blue">.primary</button></div><div class="col"><button class=" btn btn-block btn-blue ripple">.ripple</button></div><div class="col"><button class=" btn btn-block btn-blue ripple-inner">.inner</button></div><div class="col"><button class=" btn btn-block btn-blue ripple-outer">.outer</button></div></div>`
 
     Poi.mod("node", $("#nodetpl").innerHTML)
+
+    const BODY = $("body")
     
     window.app = new Poi({
         el: "#app",
@@ -17,6 +19,12 @@ const $ = q => document.querySelector.call(document, q);
                 if ($ele.className) selector += "." + $ele.className.trim().split(" ").join(".")
                 return selector
             }
+        },
+        watch:{
+            // innerHtml(){
+            //     // BODY.style["pointer-events"] = "none";
+            //     // setTimeout(()=>BODY.style["pointer-events"] = "auto",1000)
+            // }
         },
         mounted: {
             init() {

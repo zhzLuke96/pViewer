@@ -9,7 +9,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Viewer - PUI</title>
+    <title>📦Viewer - PUI</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://zhzluke96.github.io/Pui/dist/core.min.css">
@@ -26,7 +26,7 @@
         <![endif]-->
     <div class="mask"></div>
     <header class="t:center">
-        <h1 class="">Component editor</h1>
+        <h1 class="">📦Component editor</h1>
     </header>
     <div class="content container">
         <div id="app" class="row row-gap">
@@ -91,8 +91,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card">
-                        <div id="preBox" class="wapper">
+                    <div class="card p:0 hFill">
+                        <div id="preBox" class="wapper p:4">
                             {{= innerHtml }}
                         </div>
                     </div>
@@ -103,7 +103,7 @@
                     <div class="card bg:gray-lightest">
                         <div class="row row-gap row:center">
                             <div class="col">
-                                <h4 class="p:0 m:0">🐛Coder Viwer</h4>
+                                <h4 class="p:0 m:0">🐛Code</h4>
                             </div>
                             <div class="col">
                                 <a class="btn btn-black outline pull-right ripple" href="#modal1">
@@ -112,7 +112,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card h:5">
+                    <div class="card h:5 p:0">
                         <textarea id="codeview" class="textarea-inherit" bind:value="innerHtml" on:input="innerHtml=self.value">
                         </textarea>
                     </div>
@@ -126,7 +126,7 @@
                             <div class="col:9">
                                 <span class="f-w:900 f:5">Use it Visit this page</span>
                             </div>
-                            <a class="col f-w:900 f:6 hover:f-c:purple" href="#code" title="close">×</a>
+                            <a class="col f-w:900 f:6 hover:f-c:purple" href="#" title="close">×</a>
                         </div>
                     </div>
                     <div class="card container">
@@ -141,7 +141,7 @@
                     <div class="card container m:#">
                         <div class="row row-gap">
                             <div class="col">
-                                <a class="btn btn-dark outline ripple pull-right" href="#code">cancel</a>
+                                <a class="btn btn-dark outline ripple pull-right" href="#">cancel</a>
                             </div>
                         </div>
                     </div>
@@ -149,8 +149,11 @@
             </div>
         </script>
     <script src="https://zhzluke96.github.io/PoiJs/dist/Poi.bundle.js"></script>
+    <!-- <script src="./Poi.js"></script> -->
     <!-- <script src="./Poi.bundle.js"></script> -->
+    <!-- <script src="../PoiJs/dist/Poi.bundle.js"></script> -->
     <script src="./index.js"></script>
+    <!-- <script src="./zdom.js"></script> -->
 </body>
 
 </html>
