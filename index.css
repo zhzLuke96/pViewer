@@ -1,6 +1,17 @@
 * {
     /* transition: all .3s; */
-    transform: translate3d(0,0,0);
+    transform: translate3d(0, 0, 0);
+}
+
+body,
+html {
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
 body {
@@ -39,11 +50,11 @@ footer {
     padding: 25px;
 }
 
-.wapper{
+.wapper {
     height: 100%;
 }
 
-.hFill{
+.hFill {
     height: calc(100% - 2rem);
 }
 
@@ -105,4 +116,23 @@ footer {
 
 #app ul {
     padding-left: 1rem;
+}
+
+.modal > .body{
+    max-width: calc(100vw - 4rem) !important;
+    width: 32rem !important;
+    margin-top: -80vh !important;
+}
+
+@media(min-width: 400px){
+    .modal > .body{
+        margin-top: 0 !important;
+    }
+}
+
+.modal{
+    margin: -99999rem !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
 }

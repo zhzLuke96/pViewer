@@ -120,28 +120,30 @@
             </div>
             
             <div class="modal" id="modal1">
-                <div class="body cards no-b m-t:10 m-l:3 m-r:3">
-                    <div class="card container">
+                <div class="body cards no-b shadow:md">
+                    <div class="card container bg:blue-lighter f-c:white">
                         <div class="row row:baseline">
                             <div class="col:9">
                                 <span class="f-w:900 f:5">Use it Visit this page</span>
                             </div>
-                            <a class="col f-w:900 f:6 hover:f-c:purple" href="#" title="close">×</a>
+                            <div class="col t:right">
+                                <a class="f-w:900 f:6 hover:f-c:black f-c:white" href="#" title="close">×</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="card container">
+                    <div class="card container p:4">
                         <div class="row row-gap">
-                            <div class="col f:4 p:4 hidden-text">
+                            <div class="col f:4 hidden-text">
                                 <a href="{{= window.location.origin + window.location.pathname + "#" + encodeURIComponent(innerHtml) }}">
                                     {{= window.location.origin + window.location.pathname + "#" + encodeURIComponent(innerHtml) }}
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <div class="card container m:#">
+                    <div class="card container p:0">
                         <div class="row row-gap">
                             <div class="col">
-                                <a class="btn btn-dark outline ripple pull-right" href="#">cancel</a>
+                                <a class="btn btn-dark outline ripple pull-right b:0 r:0 p:4" href="#">cancel</a>
                             </div>
                         </div>
                     </div>
