@@ -1,7 +1,20 @@
 const $ = q => document.querySelector.call(document, q);
 (function(window){
     const toArr = o => Array.prototype.slice.call(o)
-    const default_html = `<div class="row row-gap"><div class="col"><button class=" btn btn-block btn-blue">.primary</button></div><div class="col"><button class=" btn btn-block btn-blue ripple">.ripple</button></div><div class="col"><button class=" btn btn-block btn-blue ripple-inner">.inner</button></div><div class="col"><button class=" btn btn-block btn-blue ripple-outer">.outer</button></div></div>`
+    const default_html = `<div class="row row-gap">
+<div class="col">
+    <button class=" btn btn-block btn-blue">.primary</button>
+</div>
+<div class="col">
+    <button class=" btn btn-block btn-blue ripple">.ripple</button>
+</div>
+<div class="col">
+    <button class=" btn btn-block btn-blue ripple-inner">.inner</button>
+</div>
+<div class="col">
+    <button class=" btn btn-block btn-blue ripple-outer">.outer</button>
+</div>
+</div>`
 
     Poi.mod("node", $("#nodetpl").innerHTML)
 

@@ -4,158 +4,168 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
 <html class="no-js">
-<!--<![endif]-->
+  <!--<![endif]-->
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>📦Viewer - PUI</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://zhzluke96.github.io/Pui/dist/core.min.css">
-    <link rel="stylesheet" href="https://zhzluke96.github.io/Pui/dist/util.min.css">
-    <!-- <link rel="stylesheet" href="./core.min.css"> -->
-    <!-- <link rel="stylesheet" href="./util.min.css"> -->
-    <link rel="stylesheet" href="./index.css">
-
-</head>
-
-<body class="pui">
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://zhzluke96.github.io/Pui/dist/core.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://zhzluke96.github.io/Pui/dist/util.min.css"
+    />
+    <!-- <link rel="stylesheet" href="./core.min.css">
+    <link rel="stylesheet" href="./util.min.css"> -->
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body class="pui">
     <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
     <div class="mask"></div>
     <header class="t:center">
-        <h1 class="">📦Component editor</h1>
+      <h1 class="">📦Component editor</h1>
     </header>
     <div class="content container">
-        <div id="app" class="row row-gap">
-        </div>
+      <div id="app" class="row row-gap"></div>
     </div>
     <footer class="t:center">
-        <span>Power by:</span>
-        <ul class="nav">
-            <li>
-                <a href="https://zhzluke96.github.io/Pui/">PUI.SASS</a>
-            </li>
-            <li>
-                <a href="https://zhzluke96.github.io/PoiJs/">POI.JS</a>
-            </li>
-        </ul>
-        <hr>
-        <span>Copyright © 2018-now <a href="https://github.com/zhzLuke96" class="f-c:gray"> zhzLuke96</a></span>
+      <span>Power by:</span>
+      <ul class="nav">
+        <li>
+          <a href="https://zhzluke96.github.io/Pui/">PUI.SASS</a>
+        </li>
+        <li>
+          <a href="https://zhzluke96.github.io/PoiJs/">POI.JS</a>
+        </li>
+      </ul>
+      <hr />
+      <span
+        >Copyright © 2018-now
+        <a href="https://github.com/zhzLuke96" class="f-c:gray">
+          zhzLuke96</a
+        ></span
+      >
     </footer>
     <script type="text/x-template" id="nodetpl">
-        {{ if(dom){ }}
-            <li>
-                <div>{{= seletorify(dom) }}
-                {{ if(dom.children.length != 0){ }}
-                    <ul>
-                        {{ for(let e of dom.children){ }}
-                            {{* {dom:e,seletorify:seletorify} }}
-                        {{ } }}
-                    </ul>
-                {{ } }}
-                </div>
-            </li>
-        {{ } }}
+      {{ if(dom){ }}
+          <li>
+              <div>{{= seletorify(dom) }}
+              {{ if(dom.children.length != 0){ }}
+                  <ul>
+                      {{ for(let e of dom.children){ }}
+                          {{* {dom:e,seletorify:seletorify} }}
+                      {{ } }}
+                  </ul>
+              {{ } }}
+              </div>
+          </li>
+      {{ } }}
     </script>
     <script type="text/html" id="treeTpl">
-        <div class="col col-sm:10">
-                <div class="cards max-h no-b shadow:sm">
-                    <div class="card bg:gray-lightest">
-                        <h4 class="p:0 m:0">🌳Dom Tree</h4>
-                    </div>
-                    <div class="card">
-                        {{ if(selfDom && selfDom.children.length != 0){ }}
-                            <ul>
-                                {{ for(let e of selfDom.children){ }}
-                                    {{$ node({dom:e,seletorify:seletorify}) }}
-                                {{ } }}
-                            </ul>
-                        {{ } }}
-                    </div>
-                </div>
-            </div>
-            <div class="col col-sm:10 col-sm:first">
-                <div class="cards no-b max-h shadow:sm">
-                    <div class="card bg:gray-lightest">
-                        <div class="row row-gap row:center">
-                            <div class="col">
-                                <h4 class="p:0 m:0">🚀PreViwer</h4>
-                            </div>
-                            <div class="col">
-                                <span class="pull-right r:10 p:2 m-l:1 mac-green"></span>
-                                <span class="pull-right r:10 p:2 m-l:1 mac-yellow"></span>
-                                <span class="pull-right r:10 p:2 m-l:1 mac-red"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card p:0 hFill">
-                        <div id="preBox" class="wapper p:4">
-                            {{= innerHtml }}
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="code" class="col:10 m-t:5">
-                <div class="cards no-b shadow:sm">
-                    <div class="card bg:gray-lightest">
-                        <div class="row row-gap row:center">
-                            <div class="col">
-                                <h4 class="p:0 m:0">🐛Code</h4>
-                            </div>
-                            <div class="col">
-                                <a class="btn btn-black outline pull-right ripple" href="#modal1">
-                                    🍔URI-encode
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card h:5 p:0">
-                        <textarea id="codeview" class="textarea-inherit" bind:value="innerHtml" on:input="innerHtml=self.value">
-                        </textarea>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="modal" id="modal1">
-                <div class="body cards no-b shadow:md">
-                    <div class="card container bg:blue-lighter f-c:white">
-                        <div class="row row:baseline">
-                            <div class="col:9">
-                                <span class="f-w:900 f:5">Use it Visit this page</span>
-                            </div>
-                            <div class="col t:right">
-                                <a class="f-w:900 f:6 hover:f-c:black f-c:white" href="#" title="close">×</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card container p:4">
-                        <div class="row row-gap">
-                            <div class="col f:4 hidden-text">
-                                <a href="{{= window.location.origin + window.location.pathname + "#" + encodeURIComponent(innerHtml) }}">
-                                    {{= window.location.origin + window.location.pathname + "#" + encodeURIComponent(innerHtml) }}
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card container p:0">
-                        <div class="row row-gap">
-                            <div class="col">
-                                <a class="btn btn-dark outline ripple pull-right b:0 r:0 p:4" href="#">cancel</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </script>
+      <div class="col col-sm:10">
+              <div class="cards max-h no-b shadow:sm">
+                  <div class="card bg:gray-lightest">
+                      <h4 class="p:0 m:0">🌳Dom Tree</h4>
+                  </div>
+                  <div class="card">
+                      {{ if(selfDom && selfDom.children.length != 0){ }}
+                          <ul>
+                              {{ for(let e of selfDom.children){ }}
+                                  {{$ node({dom:e,seletorify:seletorify}) }}
+                              {{ } }}
+                          </ul>
+                      {{ } }}
+                  </div>
+              </div>
+          </div>
+          <div class="col col-sm:10 col-sm:first">
+              <div class="cards no-b max-h shadow:sm">
+                  <div class="card bg:gray-lightest">
+                      <div class="row row-gap row:center">
+                          <div class="col">
+                              <h4 class="p:0 m:0">🚀PreViwer</h4>
+                          </div>
+                          <div class="col">
+                              <span class="pull-right r:10 p:2 m-l:1 mac-green"></span>
+                              <span class="pull-right r:10 p:2 m-l:1 mac-yellow"></span>
+                              <span class="pull-right r:10 p:2 m-l:1 mac-red"></span>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="card p:0 hFill">
+                      <div id="preBox" class="wapper p:4">
+                          {{= innerHtml }}
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div id="code" class="col:10 m-t:5">
+              <div class="cards no-b shadow:sm">
+                  <div class="card bg:gray-lightest">
+                      <div class="row row-gap row:center">
+                          <div class="col">
+                              <h4 class="p:0 m:0">🐛Code</h4>
+                          </div>
+                          <div class="col">
+                              <a class="btn btn-black outline pull-right ripple" href="#modal1">
+                                  🍔URI-encode
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="card h:5 p:0">
+                      <textarea id="codeview" class="textarea-inherit" bind:value="innerHtml" on:input="innerHtml=self.value">
+                      </textarea>
+                  </div>
+              </div>
+          </div>
+
+          <div class="modal" id="modal1">
+              <div class="body cards no-b shadow:md">
+                  <div class="card container bg:blue-lighter f-c:white">
+                      <div class="row row:baseline">
+                          <div class="col:9">
+                              <span class="f-w:900 f:5">Use it Visit this page</span>
+                          </div>
+                          <div class="col t:right">
+                              <a class="f-w:900 f:6 hover:f-c:black f-c:white" href="#" title="close">×</a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="card container p:4">
+                      <div class="row row-gap">
+                          <div class="col f:4 hidden-text">
+                              <a href="{{= window.location.origin + window.location.pathname + "#" + encodeURIComponent(innerHtml) }}">
+                                  {{= window.location.origin + window.location.pathname + "#" + encodeURIComponent(innerHtml) }}
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="card container p:0">
+                      <div class="row row-gap">
+                          <div class="col">
+                              <a class="btn btn-dark outline ripple pull-right b:0 r:0 p:4" href="#">cancel</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+    </script>
     <script src="https://zhzluke96.github.io/PoiJs/dist/Poi.bundle.js"></script>
-    <!-- <script src="./Poi.js"></script> -->
-    <!-- <script src="./Poi.bundle.js"></script> -->
-    <!-- <script src="../PoiJs/dist/Poi.bundle.js"></script> -->
+    <!-- <script src="./Poi.js"></script>
+    <script src="./Poi.bundle.js"></script>
+    <script src="../PoiJs/dist/Poi.bundle.js"></script> -->
     <script src="./index.js"></script>
     <!-- <script src="./zdom.js"></script> -->
-</body>
-
+  </body>
 </html>
